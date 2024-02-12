@@ -1,8 +1,8 @@
 <# Use this script for offboarding users.
 Consider adding an option for multiple users
 @Authors: Sean Bachiller, Rabiya Amodwala
+Open up PowerShell as admin, then run Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 #>
-
 function main {
     $User = Read-Host "Enter the USERNAME of the person to offboard"
     try {
@@ -14,6 +14,7 @@ function main {
     }
     #Clear manager
         $adUser | Set-ADUser -Clear manager
+    #Disable account
         $adUser | Set-ADUser -Enabled $false
     #Remove groups
         $keep = 'CN=Domain Users,CN=Users,DC=sbllc,DC=org' #change
