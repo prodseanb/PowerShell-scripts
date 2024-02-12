@@ -1,7 +1,6 @@
 <# Use this script for offboarding users.
 Consider adding an option for multiple users
 @Authors: Sean Bachiller, Rabiya Amodwala
-Open up PowerShell as admin, then run Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 #>
 function main {
     $User = Read-Host "Enter the USERNAME of the person to offboard"
